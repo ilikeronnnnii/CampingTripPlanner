@@ -1,15 +1,24 @@
+
 import java.util.Vector;
 
 class CampingTrips {
-    private final String name;
-    private final String location;
-    private final Vector<Budget> budgets;
+    private String name;
+    private String location;
+    private DateAndTime dateTime;
+    private Vector<Budget> budget = new Vector<Budget>();
+    private Vector<Item> item = new Vector<Item>();
 
-    public CampingTrips(String name, String location, Vector<Budget> budgets) {
+    public CampingTrips() {
+    };
+
+    public CampingTrips(String name, String location, DateAndTime dateTime, Vector<Budget> tripBudgets,
+            Vector<Item> item) {
         this.name = name;
         this.location = location;
-        this.budgets = budgets;
-    }
+        this.dateTime = dateTime;
+        this.budget = tripBudgets;
+        this.item = item;
+    };
 
     public String getName() {
         return name;
@@ -19,7 +28,15 @@ class CampingTrips {
         return location;
     }
 
+    public DateAndTime getDateTime() {
+        return dateTime;
+    }
+
     public Vector<Budget> getBudgets() {
-        return budgets;
+        return budget;
+    }
+
+    public Vector<Item> getItems() {
+        return item;
     }
 }
